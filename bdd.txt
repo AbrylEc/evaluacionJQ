@@ -1,0 +1,17 @@
+create database evaluacionJQ;
+use evaluacionJQ;
+
+create table bird_category(
+id int unsigned not null auto_increment,
+name varchar (50) NOT NULL,
+PRIMARY KEY (id)
+) ENGINE=InnoDB;
+
+insert into bird_category (name) 
+values 
+('acuáticas'),
+('de rapiña'),
+('cantoras'),
+('no voladoras');
+
+select * from bird_category;
