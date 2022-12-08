@@ -8,6 +8,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 import ec.edu.itsqmet.evaluacion.dto.BirdCategoryDTO;
 import ec.edu.itsqmet.evaluacion.repository.IBirdCategoryRepository;
+import ec.edu.itsqmet.evaluacion.singleton.Singleton;
 
 @SpringBootTest
 class EvaluacionApplicationTests {
@@ -17,7 +18,7 @@ class EvaluacionApplicationTests {
 	@Test
 	void contextLoads() {
 
-		for (BirdCategoryDTO iterable_element : birdCategoryRepository.findAll()) {
+		for (BirdCategoryDTO iterable_element : Singleton.getBirds(birdCategoryRepository)) {
 			System.out.println("ID: " + iterable_element.getId() + ", TYPE: " + iterable_element.getName());
 		}
 
